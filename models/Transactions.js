@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const schema = mongoose.Schema({
-    AccountID: Number,
+    account_id: Number,
     transaction_count: Number,
     bucket_start_date: Date,
     bucket_end_date: Date,
