@@ -31,7 +31,7 @@ const schema = mongoose.Schema({
 ```
 
 Example item:
-
+```
       `{
   "tier_and_details": {
       "benefits": [],
@@ -57,7 +57,7 @@ Example item:
   "active": true,
   "accounts": [371138, 324287, 276528, 332179, 422649, 387979]
 }`
-
+```
 #### Customer URLs
 
 ##### Get all customers:
