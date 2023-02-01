@@ -9,6 +9,8 @@ const schema = mongoose.Schema({
     active: Boolean,
     accounts: [Number],
     tier_and_details: { tier: String, id: String, active: Boolean, benefits: [String] },
-})
+}, 
+{ strict: true }
+)
 
 module.exports = mongoose.model("customers", schema)

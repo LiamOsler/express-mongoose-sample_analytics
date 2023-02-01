@@ -18,4 +18,11 @@ router.get('/account_id/:account_id', async function(req, res, next) {
   });
 });
 
+router.get('/id/:id', async function(req, res, next) {
+  var model = Model.findOne({_id:req.params.id}, function (err, docs) {
+    if(err)  console.error(err);
+    if(docs) res.send(docs);
+  });
+});
+
 module.exports = router;

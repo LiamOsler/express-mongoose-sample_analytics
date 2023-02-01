@@ -15,6 +15,8 @@ mongoose.connect(dbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
+mongoose.set("strictQuery", true);
+
 
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
