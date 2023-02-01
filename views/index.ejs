@@ -3,9 +3,164 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet"
+    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <p>Built using the MongoDB.com <a href ="https://www.mongodb.com/docs/atlas/sample-data/sample-analytics/">sample_analytics</a> database.</p>
+    <h2>Data</h2>
+    <h3>Customers</h3>
+    <p>Customer schema:</p>
+    <pre>
+    <code class="language-js">
+const schema = mongoose.Schema({
+  username: String,
+  name: String,
+    address: String,
+    birthdate: Date,
+    email: String,
+    active: Boolean,
+    accounts: [Number],
+    tier_and_details: { 
+      tier: String, 
+      id: String, 
+      active: Boolean, 
+      benefits: [String] 
+    }
+})
+    </code>
+  </pre>
+    <p>Example item:</p>
+    <pre>
+      <code class="language-js">
+{
+  "tier_and_details": {
+      "benefits": [],
+      "0df078f33aa74a2e9696e0520c1a828a": {
+          "tier": "Bronze",
+          "id": "0df078f33aa74a2e9696e0520c1a828a",
+          "active": true,
+          "benefits": ["sports tickets"]
+      },
+      "699456451cc24f028d2aa99d7534c219": {
+          "tier": "Bronze",
+          "benefits": ["24 hour dedicated line", "concierge services"],
+          "active": true,
+          "id": "699456451cc24f028d2aa99d7534c219"
+      }
+  },
+  "_id": "5ca4bbcea2dd94ee58162a68",
+  "username": "fmiller",
+  "name": "Elizabeth Ray",
+  "address": "9286 Bethany Glens\nVasqueztown, CO 22939",
+  "birthdate": "1977-03-02T02:20:31.000Z",
+  "email": "arroyocolton@gmail.com",
+  "active": true,
+  "accounts": [371138, 324287, 276528, 332179, 422649, 387979]
+}
+      </code>
+    </pre>
+    <h4>Customer URLs</h4>
+    <p>Get all customers:</p>
+    <pre>
+<a class = "pageSlug"><span class = "pageURL"></span>account/</a>
+    </pre>
+    <p>Get customers by id:</p>
+    <pre>
+<span class = "pageURL"></span>accounts/id/:id
+    </pre>
+    <p>Example:</p>
+    <pre>
+<span class = "pageURL"></span>accounts/id/5ca4bbcea2dd94ee58162a68
+    </pre>
+
+    <h3>Accounts</h3>
+    <p>Account schema:</p>
+
+    <pre>
+      <code class="language-js">
+const schema = mongoose.Schema({
+  account_id: Number,
+  limit: Number,
+  products: [String]
+})
+      </code>
+    </pre> 
+    <p>Example item:</p>
+    <pre>
+      <code class="language-js">
+{
+  "_id": "5ca4bbc7a2dd94ee5816238d", 
+  "account_id": 557378, 
+  "limit": 10000, 
+  "products": ["InvestmentStock", "Commodity", "Brokerage", "CurrencyService"]
+}
+</code>
+    </pre> 
+    <h3>Transactions</h3>
+    <pre>
+      <code class="language-js">
+const schema = mongoose.Schema({
+  account_id: Number,
+  transaction_count: Number,
+  bucket_start_date: Date,
+  bucket_end_date: Date,
+  transactions: [{
+    date: Date, 
+    amount: Number, 
+    transaction_code: String, 
+    description: String, 
+    balance: Number,
+    price: String,
+    total: String
+  }]
+})
+      </code>
+    </pre>
+
+    <pre>
+      <code class="language-js">
+{
+  "_id": "5ca4bbc1a2dd94ee58161cb1",
+  "account_id": 443178,
+  "transaction_count": 66,
+  "bucket_start_date": "1969-02-04T00:00:00.000Z",
+  "bucket_end_date": "2017-01-03T00:00:00.000Z",
+  "transactions": [{
+      "_id": "63d9fec316c2d0f2a46058fd",
+      "date": "2003-09-09T00:00:00.000Z",
+      "amount": 7514,
+      "transaction_code": "buy",
+      "symbol": "adbe",
+      "price": "19.1072802650074180519368383102118968963623046875",
+      "total": "143572.1039112657392422534031"
+  }, 
+  ...
+  {
+      "_id": "63d9fec316c2d0f2a460593e",
+      "date": "2005-07-07T00:00:00.000Z",
+      "amount": 2881,
+      "transaction_code": "buy",
+      "symbol": "msft",
+      "price": "20.6769287918292690164889791049063205718994140625",
+      "total": "59570.23184926012403650474880"
+  }]
+}
+      </code>
+    </pre>  
+    
+    <script>
+      for (let item of document.getElementsByClassName("pageURL")){
+        item.innerHTML = window.location.href;
+      }
+      for (let item of document.getElementsByClassName("pageSlug")){
+        item.href = item.innerText;
+      }
+    </script>
   </body>
 </html>
+
