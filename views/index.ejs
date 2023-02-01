@@ -73,22 +73,14 @@ Example item:
     </p>
     <h5>By skip and limit:</h5>
     <p>
-      <a class = "pageSlug"><span class = "pageURL"></span>customer/:n/:k</a>
+      <span class = "pageURL"></span>customer/:n/:k
     </p>
-    <p>Where n = the starting index and k = the number of items</p>
+    <p>Where <b>n = the starting index</b> and <b>k = the number of items</b></p>
     <p>Example:</p>
     <p>
       <a class = "pageSlug"><span class = "pageURL"></span>customer/10/5</a>
     </p>
-    <p>Returns items 10 through 15</p>
-    <h5>Get customers by id:</h5>
-    <p>Base URL:</p>
-    <p>
-      <span class = "pageURL"></span>customer/id/:id
-    <p>Example:</p>
-    <p>
-      <a class = "pageSlug"><span class = "pageURL"></span>customer/id/5ca4bbcea2dd94ee58162a68</a>
-    </p>
+    <p>Returns items <b>10 through 15</b></p>
     <h5>Get customers by username:</h5>
     <p>Base URL:</p>
     <p>
@@ -97,6 +89,16 @@ Example item:
     <p>
       <a class = "pageSlug"><span class = "pageURL"></span>customer/username/fmiller</a>
     </p>
+    <h5>Search user text index fields:</h5>
+    <p>Base URL:</p>
+    <p>
+      <span class = "pageURL"></span>customer/search/:query
+    <p>Example:</p>
+    <p>
+      <a class = "pageSlug"><span class = "pageURL"></span>customer/search/hill</a>
+    </p>
+
+    <hr>
     <h3>Accounts</h3>
     <p>Account schema:</p>
     <pre><code class="language-js">const schema = mongoose.Schema({
@@ -125,6 +127,8 @@ Example item:
   <p>
     <a class = "pageSlug"><span class = "pageURL"></span>account/account_id/557378</a>
   </p>
+
+  <hr>
   <h3>Transactions</h3>
   <p>Transaction schema:</p>
   <pre><code class="language-js">const schema = mongoose.Schema({
