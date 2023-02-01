@@ -13,4 +13,6 @@ const schema = mongoose.Schema({
 { strict: true }
 )
 
+schema.index({username: 'text', 'name': 'text', address: 'text', email: 'text'});
+
 module.exports = mongoose.model("customers", schema)
