@@ -66,6 +66,7 @@ Example item:
 }</code></pre>
   </p>
     <h4>Customer URLs</h4>
+
     <h5>Get all customers:</h5>
     <p>
       <p>Base URL:</p>
@@ -81,21 +82,47 @@ Example item:
       <a class = "pageSlug"><span class = "pageURL"></span>customer/10/5</a>
     </p>
     <p>Returns items <b>10 through 15</b></p>
-    <h5>Get customers by username:</h5>
+
+    <h5>username:</h5>
     <p>Base URL:</p>
     <p>
+      <a class = "pageSlug"><span class = "pageURL"></span>customer/username/</a>
+    </p>
+    <p>(Base URL returns list of usernames)</p>
+
+    <p>Find by username:</p>
+    <p>
       <span class = "pageURL"></span>customer/username/:username
+    </p>
     <p>Example:</p>
     <p>
       <a class = "pageSlug"><span class = "pageURL"></span>customer/username/fmiller</a>
     </p>
+
+    <h5>email:</h5>
+    <p>Base URL:</p>
+    <p>
+      <a class = "pageSlug"><span class = "pageURL"></span>customer/email/</a>
+    </p>
+    <p>(Base URL returns list of emails)</p>
+
+    <p>Find by username:</p>
+    <p>
+      <span class = "pageURL"></span>customer/email/:email
+    </p>
+    <p>Example:</p>
+    <p>
+      <a class = "pageSlug"><span class = "pageURL"></span>customer/email/arroyocolton@gmail.com</a>
+    </p>
+    
+
     <h5>Search user text index fields:</h5>
     <p>Base URL:</p>
     <p>
       <span class = "pageURL"></span>customer/search/:query
     <p>Example:</p>
     <p>
-      <a class = "pageSlug"><span class = "pageURL"></span>customer/search/hill</a>
+      <a class = "pageSlug"><span class = "pageURL"></span>customer/search/miller</a>
     </p>
 
     <hr>
@@ -114,6 +141,7 @@ Example item:
   "products": ["InvestmentStock", "Commodity", "Brokerage", "CurrencyService"]
 }</code></pre>
   <h4>Account URLs</h4>
+
   <h5>Get all accounts:</h5>
   <p>
     <p>Base URL:</p>
