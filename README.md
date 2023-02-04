@@ -6,6 +6,7 @@ Hosted Versions:
 
 Cyclic:
 https://faithful-cyan-trunks.cyclic.app/
+
 Azure:
 https://ticker-tape-api.azurewebsites.net/
 
