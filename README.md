@@ -1,6 +1,15 @@
 API Documentation
 =================
 
+Hosted Versions:
+
+
+Cyclic:
+https://faithful-cyan-trunks.cyclic.app/
+
+Azure:
+https://ticker-tape-api.azurewebsites.net/
+
 Visit the base URL https://ticker-tape-api.azurewebsites.net/ for HTML version with formatted baseURLs
 
 Built using the MongoDB.com [sample_analytics](https://www.mongodb.com/docs/atlas/sample-data/sample-analytics/) database.
