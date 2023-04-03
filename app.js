@@ -50,7 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
   // // Website you wish to allow to connect
-  const allowedOrigins = [ 'https://group19project.netlify.app', 'https://darling-sunshine-0ef6da.netlify.app', 'https://csci4177-group19-project.vercel.app', 'https://csci4177-group19-project-ol066m3ep-alexprokh.vercel.app'];
+  const allowedOrigins = [ 'https://scintillating-toffee-28fea0.netlify.app/','https://group19project.netlify.app', 'https://darling-sunshine-0ef6da.netlify.app', 'https://csci4177-group19-project.vercel.app', 'https://csci4177-group19-project-ol066m3ep-alexprokh.vercel.app'];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
        res.setHeader('Access-Control-Allow-Origin', origin);
